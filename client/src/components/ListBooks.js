@@ -30,7 +30,7 @@ const ListBooks = ({ bookData }) => {
                   onClick={() => router(`/book-details/${book._id}`)}
                   role="button"
                 >
-                  <th scope="row">{i}</th>
+                  <th scope="row">{i+1}</th>
                   <th scope="col" className="">
                     <img
                       src={book?.cover_Image?.url}
