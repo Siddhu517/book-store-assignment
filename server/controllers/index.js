@@ -1,18 +1,18 @@
 import Book from "../Models/bookStore";
+import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
+dotenv.config();
 
-import cloudinary from "cloudinary";
+const cloud_name = process.env.CLOUD_NAME;
+const api_key = process.env.API_KEY;
+const api_secret = process.env.API_SECRET;
 
+// Configuration
 cloudinary.config({
-  cloud_name: "dbrilpskh",
-  api_key: "157783874915518",
-  api_secret: "o7ZmYfiR2qRo1OJ0uOt374Tt5X4",
+  cloud_name,
+  api_key,
+  api_secret,
 });
-
-/* cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_key: process.env.CLOUDINARY_KEY,
-  api_secret: process.env.CLOUDINARY_SECRET,
-}); */
 
 export const bookStoreList = async (req, res) => {
   try {
